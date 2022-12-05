@@ -37,6 +37,8 @@ public class MemberEntity {
     private String mname;
     @Column( nullable = false )
     private String memail;
+    @Column 
+    private String mrol;
 
     @OneToMany(mappedBy = "memberEntity" ) 
     @Builder.Default 
