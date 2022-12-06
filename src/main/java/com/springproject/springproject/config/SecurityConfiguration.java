@@ -17,37 +17,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private Memberservice memberService;
 
-    @Override // 인증(로그인) 관련 메소드 재정의
+    @Override 
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService( memberService ).passwordEncoder( new BCryptPasswordEncoder() );
-        // memberService 에서  UserDetailsService 구현체
-            // loadUserByUsername 구현
+      
+          
     }
 
-    @Override // http 관련 시리큐티 재정의
+    @Override 
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .formLogin()
-                .loginPage("/member/login")
-                .loginProcessingUrl("/member/getmember")
-                .defaultSuccessUrl("/")
-                .failureUrl("/")
-                .usernameParameter("mid")
-                .passwordParameter("mpassword")
-            .and()
-                .logout()
-                    .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout"))
-                    .logoutSuccessUrl("/")
-                    .invalidateHttpSession(true)
-            .and()
-                .csrf()
-                    .ignoringAntMatchers("/member/getmember")
-                    .ignoringAntMatchers("/member/setmember")
-            .and()
-                .oauth2Login()
-                .userInfoEndpoint()
-                .userService(memberService);
-
+            .antMatcher("/");
 
        
     }
