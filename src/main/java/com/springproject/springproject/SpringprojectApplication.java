@@ -11,3 +11,4 @@ public class SpringprojectApplication {
 	}
 
 }
+// ./gradlew build
