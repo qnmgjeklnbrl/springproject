@@ -8,13 +8,13 @@ function Signup( props ){ // * 회원가입 컴포넌트 *
         let info = {    // 2. 입력받은 값 가져오기
             mid : document.querySelector('.mid').value ,
             mpassword : document.querySelector('.mpassword').value ,
-            manme: document.querySelector(".mname").value,
+            mname: document.querySelector(".mname").value,
             mphone : document.querySelector('.mphone').value,
             memail: document.querySelector(".memail").value
         }
 
         axios           // 3. axios 비동기통신 이용한 서버[spring] 통신
-            .post( "http://localhost:8085/member/setmember" ,  info )   // 요청메소드 ( rul , data )
+            .post( "/member/setmember" ,  info )   // 요청메소드 ( rul , data )
             .then( res => { // 응답
                 let result = res.data ;
                 if( result != 0 ){ // 회원가입 성공

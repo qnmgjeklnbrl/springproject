@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import java.util.ArrayList;
+
+import com.springproject.springproject.domain.dto.MemberDto;
 import com.springproject.springproject.domain.entity.reservation.ReservationEntity;
 
 import lombok.AllArgsConstructor;
@@ -43,4 +45,23 @@ public class MemberEntity {
     @OneToMany(mappedBy = "memberEntity" ) 
     @Builder.Default 
     private List<ReservationEntity> reservationEntities = new ArrayList<>();
+
+
+
+    public MemberDto toDto(){
+
+        return MemberDto.builder()
+
+            .mno(this.mno)
+            .mid(this.mid)
+            .mpassword(this.mpassword)
+            .mphone(this.mphone)
+            .mname(this.mname)
+            .memail(this.memail)
+            .mrol(this.mrol)
+            .build();
+
+
+
+    }
 }
