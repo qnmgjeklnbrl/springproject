@@ -6,8 +6,10 @@ import java.util.Set;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -56,6 +58,18 @@ public class Memberservice  implements UserDetailsService{
 
      
         return entity.getMno();
+    }
+    public String getLoginMno(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        Object principal = authentication.getPrincipal();
+        if(principal.equals("anonymousUser")){return null;}
+        else{
+            MemberDto memberDto =(MemberDto)principal;
+            return memberDto.getMid();
+        }
+
+
     }
     
 }
