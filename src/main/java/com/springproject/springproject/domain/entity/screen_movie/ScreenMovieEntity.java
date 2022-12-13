@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.ArrayList;
 
+import com.springproject.springproject.domain.entity.BaseEntity;
 import com.springproject.springproject.domain.entity.movie.MovieEntity;
 import com.springproject.springproject.domain.entity.reservation.ReservationEntity;
 import com.springproject.springproject.domain.entity.screen.ScreenEntity;
@@ -25,7 +26,7 @@ import lombok.ToString;
 @Entity
 @Table(name="screen_movie")
 @NoArgsConstructor@AllArgsConstructor@Getter@Setter@Builder@ToString
-public class ScreenMovieEntity {
+public class ScreenMovieEntity  extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int smno;

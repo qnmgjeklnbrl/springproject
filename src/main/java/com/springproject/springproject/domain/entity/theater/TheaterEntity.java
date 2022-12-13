@@ -12,13 +12,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.springproject.springproject.domain.entity.BaseEntity;
 import com.springproject.springproject.domain.entity.screen.ScreenEntity;
 
 import lombok.*;
 @Entity
 @Table(name="theater")
 @NoArgsConstructor@AllArgsConstructor@Getter@Setter@Builder@ToString
-public class TheaterEntity {
+public class TheaterEntity  extends BaseEntity{
     @Id 
     @GeneratedValue( strategy = GenerationType.IDENTITY ) 
     private int tno;

@@ -10,6 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.ArrayList;
 
+import com.springproject.springproject.domain.entity.BaseEntity;
 import com.springproject.springproject.domain.entity.screen_movie.ScreenMovieEntity;
 
 import lombok.AllArgsConstructor;
@@ -22,7 +23,7 @@ import lombok.ToString;
 @Entity
 @Table(name="movie")
 @NoArgsConstructor@AllArgsConstructor@Getter@Setter@Builder@ToString
-public class MovieEntity {
+public class MovieEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int mono;

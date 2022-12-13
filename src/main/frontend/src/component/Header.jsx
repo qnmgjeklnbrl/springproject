@@ -32,7 +32,7 @@ export default function Header(props){
                             <li><Link to="/">마이페이지</Link></li>
                             {
                                 login=="admin"&&
-                                <li><Link to="/">관리자모드</Link></li>
+                                <li><Link to="/admin/register">관리자 페이지</Link></li>
                             }
                            
                         </>

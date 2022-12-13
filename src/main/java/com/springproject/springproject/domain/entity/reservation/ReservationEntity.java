@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 
 import javax.persistence.Table;
 
+import com.springproject.springproject.domain.entity.BaseEntity;
 import com.springproject.springproject.domain.entity.member.MemberEntity;
 import com.springproject.springproject.domain.entity.screen_movie.ScreenMovieEntity;
 
@@ -22,7 +23,7 @@ import lombok.ToString;
 @Entity
 @Table(name="reservation")
 @NoArgsConstructor@AllArgsConstructor@Getter@Setter@Builder@ToString
-public class ReservationEntity {
+public class ReservationEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rno;

@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import java.util.ArrayList;
 
 import com.springproject.springproject.domain.dto.MemberDto;
+import com.springproject.springproject.domain.entity.BaseEntity;
 import com.springproject.springproject.domain.entity.reservation.ReservationEntity;
 
 import lombok.AllArgsConstructor;
@@ -25,7 +26,7 @@ import lombok.ToString;
 @Entity
 @Table(name="member")
 @NoArgsConstructor@AllArgsConstructor@Getter@Setter@Builder@ToString
-public class MemberEntity {
+public class MemberEntity extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int mno;

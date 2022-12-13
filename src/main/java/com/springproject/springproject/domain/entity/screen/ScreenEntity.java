@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.springproject.springproject.domain.entity.BaseEntity;
 import com.springproject.springproject.domain.entity.screen_movie.ScreenMovieEntity;
 import com.springproject.springproject.domain.entity.theater.TheaterEntity;
 
@@ -19,7 +20,7 @@ import lombok.*;
 @Entity
 @Table(name="screen")
 @NoArgsConstructor@AllArgsConstructor@Getter@Setter@Builder@ToString
-public class ScreenEntity {
+public class ScreenEntity  extends BaseEntity{
     @Id 
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private int sno;
