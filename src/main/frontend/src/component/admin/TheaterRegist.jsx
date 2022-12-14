@@ -14,7 +14,7 @@ export default function TheaterRegist(props){
             axios
                 .post( "/admin/settname", {tname:theater})
                 .then(res=>{
-                    if(res.data==true){alert("영화관 등록 성공")}
+                    if(res.data==true){alert("영화관 등록 성공") ;document.querySelector(".tnamebox").value=""}
                     else{alert("영화관 등록 실패")}
 
             
