@@ -7,6 +7,13 @@ export default function Regist(props){
     const [comp, setComp] = useState();
      const [isToggleOn1,setIsToggleOn1] = useState(false)
      const [isToggleOn2,setIsToggleOn2] = useState(false)
+     
+    
+    
+
+
+
+
     function handleClick1(){
         setIsToggleOn1((isToggleOn1)=>!isToggleOn1)
     }
@@ -39,10 +46,16 @@ export default function Regist(props){
                         </>
                     }
             </div>
-            <div children={comp}/>
+          
+            <div>
+                    {comp}
+
+            </div>
+         
            
         </div>
-         
+
+    
 
 
     );

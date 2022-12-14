@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.springproject.springproject.domain.dto.TheaterDto;
 import com.springproject.springproject.domain.entity.BaseEntity;
 import com.springproject.springproject.domain.entity.screen.ScreenEntity;
 
@@ -28,6 +29,16 @@ public class TheaterEntity  extends BaseEntity{
     @OneToMany(mappedBy = "theaterEntity" ) 
     @Builder.Default 
     private List<ScreenEntity> screenEntities = new  ArrayList<>();
+
+
+    public TheaterDto toDto(){
+
+        return TheaterDto.builder()
+            .tno(this.tno)
+            .tname(this.tname)
+            .build();
+
+    }
 
 
     

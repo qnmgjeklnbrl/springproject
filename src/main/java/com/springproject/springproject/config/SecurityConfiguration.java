@@ -38,7 +38,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()  
                     .csrf()
                         .ignoringAntMatchers("/member/getmember")
-                        .ignoringAntMatchers("/member/setmember") ;
+                        .ignoringAntMatchers("/member/setmember") 
+                        .ignoringAntMatchers("/admin/settname") ;
 
                 
 
