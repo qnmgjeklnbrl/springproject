@@ -40,7 +40,7 @@ export default function Regist(props){
                         isToggleOn2 && 
                         <>
                             <ul>
-                            <li><Link to="/member/login">영화 등록</Link></li>
+                            <li><Link to="/member/login"> 영화 등록  </Link></li>
                             <li><Link to="/member/login">상영기간&시간 등록</Link></li>
                             </ul>
                         </>
