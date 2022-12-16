@@ -17,7 +17,7 @@ export default function Index (props){
                     <Route path="/" element={<Home/>}/>
                     <Route path="/member/signup" element={<Signup/>}/>
                     <Route path="/member/login" element={<Login/>}/>
-                    <Route path="/admin/register" element={<Regist/>}/>
+                    <Route path="/admin/register/*" element={<Regist/>}/>
                 </Routes>
             
                 <Footer/>

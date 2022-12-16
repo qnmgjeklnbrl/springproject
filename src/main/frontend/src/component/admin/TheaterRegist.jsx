@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 export default function TheaterRegist(props){
-    
+    const [ theaterlist , setTheaterlist] = useState([]); 
     let theater= "";
     //const[theater,setTheater] =  useState("");
       //영화관 등록 함수
@@ -24,6 +24,25 @@ export default function TheaterRegist(props){
 
         }
 
+
+    function getTheater(){
+
+        axios
+            .get("admin/gettheaterlist")
+            .then( res=> {setTheaterlist(res.data)})
+            .catch(err=>{console.log(err)})
+
+    }
+    useEffect( getTheater  , [ ] );
+
+
+
+
+
+
+
+
+    
 
     return(
         <div>
